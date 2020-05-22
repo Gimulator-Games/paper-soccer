@@ -1,0 +1,53 @@
+roles:
+  - role: "judge"
+    rules:
+      - type: "verdict"
+        name: "world"
+        namesapce: "paper-soccer"
+        methods:
+          - "set"
+      - type: "action"
+        namespace: "paper-soccer"
+        methods:
+          - "watch"
+      - type: "register"
+        namespace: "paper-soccer"
+        methods:
+          - "find"
+      - type: "end-of-game"
+        namespace: "paper-soccer"
+        methods:
+          - "set"
+  - role: "agent"
+    rules:
+      - type: "verdict"
+        name: "world"
+        namespace: "paper-soccer"
+        methods:
+          - "watch"
+      - type: "action"
+        namespace: "paper-soccer"
+        methods:
+          - "set"
+      - type: "register"
+        namespace: "paper-soccer"
+        methods:
+          - "set"
+  - role: "gui"
+    rules:
+      - type: "verdict"
+        name: "world"
+        namespace: "paper-soccer"
+        methods:
+          - "find"
+          - "watch"
+actors:
+  - id: "judge-123"
+    role: "judge"
+  - id: "agent-1"
+    role: "agent"
+  - id: "agent-2"
+    role: "agent"
+  - id: "gui-123"
+    role: "gui"
+
