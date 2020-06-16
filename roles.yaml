@@ -1,45 +1,61 @@
 roles:
-  - role: "judge"
+  - name: "judge"
     rules:
-      - type: "verdict"
-        name: "world"
-        namesapce: "paper-soccer"
+      - key:
+          type: "verdict"
+          name: "world"
+          namesapce: "paper-soccer"
         methods:
           - "set"
-      - type: "action"
-        namespace: "paper-soccer"
+      - key:
+          type: "action"
+          namespace: "paper-soccer"
         methods:
           - "watch"
-      - type: "register"
-        namespace: "paper-soccer"
+      - key:
+          type: "register"
+          namespace: "paper-soccer"
         methods:
           - "find"
-      - type: "end-of-game"
-        namespace: "paper-soccer"
+      - key:
+          type: "end-of-game"
+          namespace: "paper-soccer"
         methods:
           - "set"
-  - role: "agent"
+  - name: "agent"
     rules:
-      - type: "verdict"
-        name: "world"
-        namespace: "paper-soccer"
+      - key:
+          type: "verdict"
+          name: "world"
+          namespace: "paper-soccer"
         methods:
           - "watch"
-      - type: "action"
-        namespace: "paper-soccer"
+      - key:
+          type: "action"
+          namespace: "paper-soccer"
         methods:
           - "set"
-      - type: "register"
-        namespace: "paper-soccer"
+      - key:
+          type: "register"
+          namespace: "paper-soccer"
         methods:
           - "set"
-  - role: "gui"
+  - name: "gui"
     rules:
-      - type: "verdict"
-        name: "world"
-        namespace: "paper-soccer"
+      - key:
+          type: "verdict"
+          name: "world"
+          namespace: "paper-soccer"
         methods:
           - "find"
+          - "watch"
+  - name: "logger"
+    rules:
+      - key:
+          type: ""
+          namespace: ""
+          name: ""
+        methods:
           - "watch"
 actors:
   - id: "judge-123"
@@ -50,4 +66,6 @@ actors:
     role: "agent"
   - id: "gui-123"
     role: "gui"
+  - id: "logger-123"
+    role: "logger"
 
